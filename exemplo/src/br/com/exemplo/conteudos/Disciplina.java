@@ -47,11 +47,6 @@ public class Disciplina {
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
-	
-	//método de teste
-	public String teste() {
-		return nome = "Gabriel";
-	}
 
 	@Override
 	public String toString() {
