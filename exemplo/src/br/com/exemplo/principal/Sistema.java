@@ -5,7 +5,8 @@ import br.com.exemplo.conteudos.Disciplina;
 public class Sistema {
 
 	public static void main(String[] args) {
-		Disciplina disciplina = new Disciplina();
+		Disciplina disciplina;
+		disciplina = new Disciplina();
 		disciplina.setNome("POO");
 		disciplina.setProfessor("Déby");
 		disciplina.setNivel(3);
