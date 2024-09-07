@@ -1,6 +1,7 @@
 package br.com.banco.contas;
 
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
 
 public class Conta {
 
@@ -8,8 +9,10 @@ public class Conta {
 	
 	//definição dos atributos
 	private int numero;
+	private int agencia;
 	private String titular;
 	private double saldo;
+	private LocalDateTime dtHrAbertura;
 	private static int totalContas;
 	
 	//Construtor default
@@ -17,16 +20,22 @@ public class Conta {
 	}
 
 	//Construtor parametrizado
-	public Conta(int numero, String titular, double saldo) {
+	Conta(int numero, int agencia, String titular, double saldo) {
 		this.numero = numero;
+		this.agencia = agencia;
 		this.titular = titular;
 		this.saldo = saldo;
+		this.dtHrAbertura = LocalDateTime.now();
 		totalContas += 1;
 	}
 
 	//Get e Set
 	public int getNumero() {
 		return numero;
+	}
+	
+	public int getAgencia() {
+		return agencia;
 	}
 
 	public String getTitular() {
@@ -43,7 +52,11 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "Conta [numero=" + numero + ", titular=" + titular + ", saldoFormatado=" + df.format(saldo) + ", saldo=" + saldo + "]";
+		return "Conta [numero=" + numero + ", agencia=" + agencia + ", titular=" + titular + ", saldoFormatado=" + df.format(saldo) + ", saldo=" + saldo + "]";
+	}
+
+	public LocalDateTime getDtHrAbertura() {
+		return dtHrAbertura;
 	}
 
 }

@@ -22,6 +22,10 @@ public class Funcionario {
 		this.login = login;
 	}
 
+	public double getBonificacao() {
+		return this.salario * 0.1;
+	}
+	
 	//Get e Set
 	public double getSalario() {
 		return salario;

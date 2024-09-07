@@ -23,6 +23,10 @@ public class Gerente extends Funcionario {
 		this.balanco = balanco;
 	}
 
+	public double getBonificacao() {
+		return super.getSalario() * 0.15;
+	}
+	
 	//Método de autenticação
 	public boolean autenticar(int senha, String login) {
 		if(super.getSenha() == senha && super.getLogin().equals(login)) {
