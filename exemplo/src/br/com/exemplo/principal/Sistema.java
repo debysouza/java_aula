@@ -1,9 +1,11 @@
 package br.com.exemplo.principal;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import br.com.exemplo.conteudos.Disciplina;
+import br.com.exemplo.io.LeituraEscrita;
 import br.com.exemplo.utils.Util;
 
 public class Sistema {
@@ -11,7 +13,10 @@ public class Sistema {
 	//chamada do Logger
 	private static Logger log = Util.setupLogger();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		
+		LeituraEscrita.leitor("dados");
+		
 		Logger logger = Logger.getLogger(Sistema.class.getName());
 		Disciplina disciplina;
 		disciplina = new Disciplina();
