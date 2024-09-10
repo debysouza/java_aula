@@ -16,6 +16,7 @@ public class Sistema {
 	public static void main(String[] args) throws IOException {
 		
 		LeituraEscrita.leitor("dados");
+		LeituraEscrita.escritor("dados");
 		
 		Logger logger = Logger.getLogger(Sistema.class.getName());
 		Disciplina disciplina;

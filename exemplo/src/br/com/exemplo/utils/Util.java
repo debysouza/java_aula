@@ -23,21 +23,22 @@ public class Util {
 		// Desativa o uso dos Handlers do Logger pai (se houver algum)
 		logger.setUseParentHandlers(false);
 
-		// Cria um ConsoleHandler personalizado
-		ConsoleHandler customHandler = new ConsoleHandler();
-
-		// Define um Formatter personalizado para o ConsoleHandler
-		customHandler.setFormatter(new Formatter() {
-			@Override
-			public String format(LogRecord rec) {
-				// Define o formato da mensagem de log a ser exibida no console
-				return rec.getMessage() + "\n";
-			}
-		});
-
-		// Adiciona o ConsoleHandler personalizado ao Logger
-		logger.addHandler(customHandler);
-
+		if(logger.getHandlers().length == 0) {
+			// Cria um ConsoleHandler personalizado
+			ConsoleHandler customHandler = new ConsoleHandler();
+			// Define um Formatter personalizado para o ConsoleHandler
+			customHandler.setFormatter(new Formatter() {
+				@Override
+				public String format(LogRecord rec) {
+					// Define o formato da mensagem de log a ser exibida no console
+					return rec.getMessage() + "\n";
+				}
+			});
+			
+			// Adiciona o ConsoleHandler personalizado ao Logger
+			logger.addHandler(customHandler);
+		}
+		
 		// Retorna o Logger configurado
 		return logger;
 	}
