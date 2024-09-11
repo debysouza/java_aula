@@ -1,8 +1,11 @@
 package br.com.banco.usuarios;
 
+import br.com.banco.enums.TipoUsuarioEnum;
+
 public class Gerente extends Funcionario {
 
 	// Definição dos atributos
+	private TipoUsuarioEnum tipo = TipoUsuarioEnum.GERENTE_REGIONAL;
 	private int numeroFuncionarios;
 	private double balanco;
 
@@ -12,7 +15,7 @@ public class Gerente extends Funcionario {
 	}
 	
 	// Construtor parametrizado do pai
-	public Gerente(String nome, String cpf, double salario, int senha, String login) {
+	public Gerente(TipoUsuarioEnum tipo, String nome, String cpf, double salario, int senha, String login) {
 		super(nome, cpf, salario, senha, login);
 	}
 
@@ -58,6 +61,10 @@ public class Gerente extends Funcionario {
 	@Override
 	public String toString() {
 		return "Gerente [numeroFuncionarios=" + numeroFuncionarios + ", balanco=" + balanco + "]";
+	}
+
+	public TipoUsuarioEnum getTipo() {
+		return tipo;
 	}
 
 }

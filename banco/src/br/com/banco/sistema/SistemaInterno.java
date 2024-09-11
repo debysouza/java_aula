@@ -2,7 +2,9 @@ package br.com.banco.sistema;
 
 import br.com.banco.contas.ContaCorrente;
 import br.com.banco.contas.ContaPoupanca;
+import br.com.banco.enums.TipoContaEnum;
 import br.com.banco.enums.TipoUsuarioEnum;
+import br.com.banco.io.LeituraEscrita;
 import br.com.banco.usuarios.Funcionario;
 import br.com.banco.usuarios.Gerente;
 
@@ -13,14 +15,14 @@ import br.com.banco.usuarios.Gerente;
 public class SistemaInterno {
 
 	public static void main(String[] args) {
-//		Conta minhaConta = new Conta(123, 101, "Igor", 2500.);
-//		System.out.println(minhaConta);
+		
+		LeituraEscrita.leitor("dados");
 
 		/*Teste criação de objetos ContaCorrente e ContaPoupança*/
-		ContaCorrente cc = new ContaCorrente(123456, 101, "Lucas", 200., true);
+		ContaCorrente cc = new ContaCorrente(TipoContaEnum.CORRENTE,123456, 101, "Lucas", 200., true);
 		System.out.println(cc);
 		
-		ContaPoupanca cp = new ContaPoupanca(987654, 102, "Diogo", 2000.);
+		ContaPoupanca cp = new ContaPoupanca(TipoContaEnum.POUPANCA, 987654, 102, "Diogo", 2000.);
 		System.out.println(cp);
 		/**/
 

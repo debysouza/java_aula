@@ -1,0 +1,9 @@
+Corrente;123;101;Lucas Cardinot;200.25;true;
+Corrente;987;102;Arthur;3900.;false;
+Corrente;555;102;Gabriel Cruz;10.1;false;
+Poupanca;651;101;Lucas Cardinot;100.;
+Poupanca;111;101;Ana Fortuna;10920.;
+Poupanca;122;102;Déby Souza;0.;
+Gerente;Yuri;123456789-11;8500.5;$uRi%;yuri;
+Gerente;Aline;111444555-22;12650.;*#aLi;aline;
+Gerente;Letícia;159357852-66;10999.99;@le&;leticia;

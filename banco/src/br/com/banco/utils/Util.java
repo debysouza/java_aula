@@ -1,4 +1,4 @@
-package br.com.exemplo.utils;
+package br.com.banco.utils;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
