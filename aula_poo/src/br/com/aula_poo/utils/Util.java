@@ -23,6 +23,7 @@ public class Util {
 		// Desativa o uso dos Handlers do Logger pai (se houver algum)
 		logger.setUseParentHandlers(false);
 
+		customizer();
 		// Cria um ConsoleHandler personalizado
 		ConsoleHandler customHandler = new ConsoleHandler();
 
@@ -44,7 +45,7 @@ public class Util {
 
 	// Remove todos os Handlers extras do Logger
 	public static void customizer() {
-		if (logger.getHandlers().length > 1) {
+		if (logger.getHandlers().length > 0) {
 			for (Handler log : logger.getHandlers()) {// iteracao
 				logger.removeHandler(log);
 				if (logger.getHandlers().length == 1) {

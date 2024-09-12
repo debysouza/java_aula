@@ -1,20 +1,26 @@
 package br.com.exemplo.conteudos;
 
-public class Disciplina {
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class Disciplina implements Comparable<Disciplina> {
 
 	//definições dos atributos
-	public String nome;
 	private String professor;
+	public String nome;
 	protected int nivel;
+	
+	public static List<Disciplina> disciplinas = new ArrayList<>();
 	
 	//Construtor default
 	public Disciplina() {
 	}
 	
 	//Construtor parametrizado
-	public Disciplina(String nome, String professor, int nivel) {
-		this.nome = nome;
+	public Disciplina(int nivel, String professor, String nome) {
 		this.professor = professor;
+		this.nome = nome;
 		this.nivel = nivel;
 	}
 	
@@ -50,7 +56,28 @@ public class Disciplina {
 
 	@Override
 	public String toString() {
-		return "Disciplina:\n\tnome=" + nome + "\n\tprofessor=" + professor + "\n\tnivel=" + nivel;
+		return "\nDisciplina [professor=" + professor + ", nome=" + nome + ", nivel=" + nivel + "]";
 	}
+	
+//	@Override
+//	public int compareTo(Disciplina disc) {
+//		return this.professor.compareTo(disc.professor);
+//	}
+
+	@Override
+	public int compareTo(Disciplina disc) {
+		Integer professor = this.professor.compareTo(disc.professor);
+		if(professor != 0) {
+			return professor;
+		}
+		return this.nome.compareTo(disc.nome);
+	}
+	
+//	Comparator
+//	Comparar o objeto inteiro
+//	@Override
+//	public int compare(Disciplina d1, Disciplina d2) {
+//		return d1.compare(d1, d2);
+//	}
 	
 }
