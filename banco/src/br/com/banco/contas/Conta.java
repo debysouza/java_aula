@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class Conta {
 
-	DecimalFormat df = new DecimalFormat("0,000.00");
+	DecimalFormat df = new DecimalFormat("#,##0.00");
 	
 	//definição dos atributos
 	private int numero;

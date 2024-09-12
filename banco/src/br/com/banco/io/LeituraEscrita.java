@@ -7,8 +7,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 import br.com.banco.contas.ContaCorrente;
+import br.com.banco.contas.ContaPoupanca;
 import br.com.banco.enums.TipoContaEnum;
 import br.com.banco.enums.TipoUsuarioEnum;
+import br.com.banco.usuarios.Gerente;
 import br.com.banco.utils.Util;
 
 public class LeituraEscrita {
@@ -26,18 +28,25 @@ public class LeituraEscrita {
 				linha = buffRead.readLine();
 				if (linha != null) {
 					String[] dados = linha.split(";");
-					//ContaCorrente(TipoContaEnum tipo, int numero, int agencia, String titular, double saldo, boolean chequeEspecial)
+					//ContaCorrente(TipoContaEnum tipo, int id, int numero, int agencia, String titular, double saldo, boolean chequeEspecial)
 					if(dados[0].equalsIgnoreCase(TipoContaEnum.CORRENTE.getTipo())) {
-						ContaCorrente cc = new ContaCorrente(TipoContaEnum.CORRENTE, Integer.parseInt(dados[1]), Integer.parseInt(dados[2]),
-								dados[3], Double.parseDouble(dados[4]), Boolean.parseBoolean(dados[5]));
+						ContaCorrente cc = new ContaCorrente(TipoContaEnum.CORRENTE, Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), Integer.parseInt(dados[3]),
+								dados[4], Double.parseDouble(dados[5]), Boolean.parseBoolean(dados[6]));
 						Util.setupLogger().log(Level.INFO, cc::toString);
 						//Inserir o Map
-					//ContaPoupanca(TipoContaEnum tipo, int numero, int agencia, String titular, double saldo)
+						ContaCorrente.getMapaContasCorrente().put(Integer.parseInt(dados[1]), cc);
+					//ContaPoupanca(TipoContaEnum tipo, int id, int numero, int agencia, String titular, double saldo)
 					} else if(dados[0].equalsIgnoreCase(TipoContaEnum.POUPANCA.getTipo())) {
-					
-					//Gerente(TipoUsuarioEnum tipo, String nome, String cpf, double salario, int senha, String login)
-					} else if(dados[0].contains(TipoUsuarioEnum.GERENTE_REGIONAL.getTipo())) {
-						
+						ContaPoupanca cp = new ContaPoupanca(TipoContaEnum.POUPANCA, Integer.parseInt(dados[1]), Integer.parseInt(dados[2]),
+								Integer.parseInt(dados[3]), dados[4], Double.parseDouble(dados[5]));
+						Util.setupLogger().log(Level.INFO, cp::toString);
+						ContaPoupanca.getMapaContasPoupanca().put(Integer.parseInt(dados[1]), cp);
+					//Gerente(TipoUsuarioEnum tipo, int id, String nome, String cpf, double salario, int senha, String login)
+					} else if(TipoUsuarioEnum.GERENTE_REGIONAL.getTipo().contains(dados[0])) {
+						Gerente gg = new Gerente(TipoUsuarioEnum.GERENTE_REGIONAL, Integer.parseInt(dados[1]), dados[2],
+								dados[3], Double.parseDouble(dados[4]), Integer.parseInt(dados[5]), dados[6]);
+						Util.setupLogger().log(Level.INFO, gg::toString);
+						Gerente.getMapaGerentes().put(Integer.parseInt(dados[1]), gg);
 					} else {
 						break;
 					}
