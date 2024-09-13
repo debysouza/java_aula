@@ -3,6 +3,8 @@ package br.com.banco.io;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -32,11 +34,14 @@ public class Relatorio {
 		String nome = "relatorio_contas_corrente";
 		try {
 			BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeituraEscrita.PATH_BASICO+nome+LeituraEscrita.EXTENSAO, true));
-			buffWrite.append("###########INÍCIO##########");
+			buffWrite.append("###########INÍCIO##########\n");
+			LocalDateTime data = LocalDateTime.now();
+			DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+			buffWrite.append(data.format(formato));
 			for(Map.Entry<Integer, ContaCorrente> cc : ContaCorrente.getMapaContasCorrente().entrySet()) {
-				buffWrite.append("Titular: " + cc.getValue().getTitular() + "\nAgência: " + cc.getValue().getAgencia() + "\nConta Corente: " + cc.getValue().getNumero());
+				buffWrite.append("\nTitular: " + cc.getValue().getTitular() + "\nAgência: " + cc.getValue().getAgencia() + "\nConta Corente: " + cc.getValue().getNumero());
 			}
-			buffWrite.append("###########FIM#############");
+			buffWrite.append("\n###########FIM#############\n");
 			buffWrite.close();
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -1,0 +1,12 @@
+###########INÍCIO##########
+12/09/2024 21:09:37
+Titular: Lucas Cardinot
+Agência: 101
+Conta Corente: 123
+Titular: Arthur
+Agência: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+Agência: 102
+Conta Corente: 555
+###########FIM#############
