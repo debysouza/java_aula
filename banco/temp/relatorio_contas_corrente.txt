@@ -69,3 +69,15 @@ Titular: Gabriel Cruz
 Ag�ncia: 102
 Conta Corente: 555
 ###########FIM#############
+###########INÍCIO##########
+14/09/2024 11:50:00
+Titular: Lucas Cardinot
+Agência: 101
+Conta Corente: 123
+Titular: Arthur
+Agência: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+Agência: 102
+Conta Corente: 555
+###########FIM#############

@@ -1,13 +1,23 @@
 package br.com.banco.usuarios;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Funcionario {
 
 	//definição de atributos
+	private int id;
 	private String nome;
 	private String cpf;
 	private double salario;
 	private int senha;
 	private String login;
+	/*Variável para incrementar +1 ao id de Funcionário a cada inserção no mapaS*/
+	private static int totalFuncionarios = 0;
+	/**/
+	/*Mapa de Funcionários usando cpf como chave*/
+	private static Map<String, Funcionario> mapaFuncionarios = new HashMap<>();
+	/**/
 	
 	//Construtor default
 	public Funcionario() {
@@ -15,11 +25,13 @@ public class Funcionario {
 
 	//Construtor parametrizado	
 	public Funcionario(String nome, String cpf, double salario, int senha, String login) {
+		this.id = totalFuncionarios;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.salario = salario;
 		this.senha = senha;
 		this.login = login;
+		totalFuncionarios++;
 	}
 
 	public double getBonificacao() {
@@ -63,6 +75,14 @@ public class Funcionario {
 	public String toString() {
 		return "Funcionario [nome=" + nome + ", cpf=" + cpf + ", salario=" + salario + ", senha=" + senha + ", login="
 				+ login + "]";
+	}
+
+	public static Map<String, Funcionario> getMapaFuncionarios() {
+		return mapaFuncionarios;
+	}
+
+	public int getId() {
+		return id;
 	}
 	
 }

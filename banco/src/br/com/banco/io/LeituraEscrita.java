@@ -10,6 +10,7 @@ import br.com.banco.contas.ContaCorrente;
 import br.com.banco.contas.ContaPoupanca;
 import br.com.banco.enums.TipoContaEnum;
 import br.com.banco.enums.TipoUsuarioEnum;
+import br.com.banco.usuarios.Funcionario;
 import br.com.banco.usuarios.Gerente;
 import br.com.banco.utils.Util;
 
@@ -52,6 +53,9 @@ public class LeituraEscrita {
 								dados[3], Double.parseDouble(dados[4]), Integer.parseInt(dados[5]), dados[6]);
 						Util.setupLogger().log(Level.INFO, gg::toString);
 						Gerente.getMapaGerentes().put(Integer.parseInt(dados[1]), gg);
+						/*Adicionando o Gerente no Mapa de Funcionários*/
+						Funcionario.getMapaFuncionarios().put(dados[3], gg);
+						/**/
 					}
 				} else {
 					break;
