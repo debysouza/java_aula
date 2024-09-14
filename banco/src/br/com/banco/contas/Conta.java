@@ -2,8 +2,11 @@ package br.com.banco.contas;
 
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
+import java.util.logging.Level;
 
-public class Conta {
+import br.com.banco.utils.Util;
+
+public abstract class Conta {
 
 	DecimalFormat df = new DecimalFormat("#,##0.00");
 	
@@ -11,7 +14,7 @@ public class Conta {
 	private int numero;
 	private int agencia;
 	private String titular;
-	private double saldo;
+	protected double saldo;
 	private LocalDateTime dtHrAbertura;
 	private static int totalContas;
 	
@@ -59,4 +62,14 @@ public class Conta {
 		return dtHrAbertura;
 	}
 
+	public void sacar(Double valor) {
+		if(valor <= this.saldo && valor > 0) {
+			this.saldo -= valor;
+		} else {
+			Util.setupLogger().log(Level.INFO, "Saldo insuficiente!");
+		}
+	}
+	
+	public abstract void depositar(Double valor);
+	
 }

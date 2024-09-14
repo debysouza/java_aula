@@ -2,10 +2,12 @@ package br.com.banco.contas;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
 
 import br.com.banco.enums.TipoContaEnum;
+import br.com.banco.utils.Util;
 
-public class ContaPoupanca extends Conta {
+public class ContaPoupanca extends Conta implements Transacao {
 
 	private TipoContaEnum tipo = TipoContaEnum.POUPANCA;
 	private int id;
@@ -49,6 +51,21 @@ public class ContaPoupanca extends Conta {
 
 	public static Map<Integer, ContaPoupanca> getMapaContasPoupanca() {
 		return mapaContasPoupanca;
+	}
+
+	@Override
+	public void depositar(Double valor) {
+		if(valor > 0) {
+			saldo += valor;
+		} else {
+			Util.setupLogger().log(Level.INFO, "Valor inexistente!");
+		}		
+	}
+
+	@Override
+	public void transferir(Double valor, Conta destino) {
+		sacar(valor);
+		((ContaPoupanca) destino).depositar(valor);
 	}
 	
 }

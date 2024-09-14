@@ -9,4 +9,63 @@ Conta Corente: 987
 Titular: Gabriel Cruz
 AgÃªncia: 102
 Conta Corente: 555
+###########FIM########################INÃCIO##########
+13/09/2024 16:08:53
+Titular: Lucas Cardinot
+AgÃªncia: 101
+Conta Corente: 123
+Titular: Arthur
+AgÃªncia: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+AgÃªncia: 102
+Conta Corente: 555
+###########FIM#############
+###########INÃCIO##########
+13/09/2024 16:09:01
+Titular: Lucas Cardinot
+AgÃªncia: 101
+Conta Corente: 123
+Titular: Arthur
+AgÃªncia: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+AgÃªncia: 102
+Conta Corente: 555
+###########FIM#############
+###########INÍCIO##########
+13/09/2024 16:09:28
+Titular: Lucas Cardinot
+Agência: 101
+Conta Corente: 123
+Titular: Arthur
+Agência: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+Agência: 102
+Conta Corente: 555
+###########FIM#############
+###########INÍCIO##########
+13/09/2024 20:12:21
+Titular: Lucas Cardinot
+Agência: 101
+Conta Corente: 123
+Titular: Arthur
+Agência: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+Agência: 102
+Conta Corente: 555
+###########FIM#############
+###########INÍCIO##########
+13/09/2024 20:15:37
+Titular: Lucas Cardinot
+Agência: 101
+Conta Corente: 123
+Titular: Arthur
+Agência: 102
+Conta Corente: 987
+Titular: Gabriel Cruz
+Agência: 102
+Conta Corente: 555
 ###########FIM#############
