@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import br.com.exemplo.utils.Util;
 
 public class LeituraEscrita {
-
+ 
 	static final String PATH_BASICO = "./temp/";
 	static final String EXTENSAO = ".txt";
 
